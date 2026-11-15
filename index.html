@@ -1,208 +1,488 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101014">
   <title>Weibo Gaming Archive</title>
+  <meta name="description" content="北京 WBG 第五人格分部粉絲檔案館，記錄選手、賽事與隊伍歷史。">
+
   <style>
+    :root {
+      --bg: #101014;
+      --surface: #19191f;
+      --surface-light: #222129;
+      --red: #b52e3d;
+      --red-light: #e05b68;
+      --text: #f4f0ed;
+      --muted: #96929b;
+      --line: #34313a;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    body {
-      background: #101014;
-      color: #f4f0eb;
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: 1.6;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 86%);
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(16, 16, 20, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 24px 7%;
-      border-bottom: 1px solid #303038;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 19px;
+      font-weight: 900;
       letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--red-light);
     }
 
     nav {
       display: flex;
-      gap: 28px;
+      gap: 30px;
     }
 
     nav a {
-      color: #aaa7b0;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    .hero {
-      min-height: 470px;
-      padding: 110px 10%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        radial-gradient(ellipse at 80% 50%, #52252c 0%, transparent 45%),
-        linear-gradient(120deg, #19191f, #101014);
-    }
-
-    .eyebrow {
-      color: #d77b83;
-      letter-spacing: 4px;
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #aaa7b0;
-      max-width: 520px;
-      font-size: 16px;
-    }
-
-    .section {
-      padding: 70px 10%;
-    }
-
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .section-desc {
-      color: #88858e;
-      margin-bottom: 32px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      padding: 28px;
-      min-height: 160px;
-      background: #1b1b22;
-      border: 1px solid #303038;
+      color: var(--muted);
+      font-size: 13px;
       transition: 0.2s;
     }
 
-    .card:hover {
-      border-color: #b85b65;
-      transform: translateY(-4px);
+    nav a:hover {
+      color: var(--red-light);
     }
 
-    .card h3 {
-      font-size: 19px;
-      margin-bottom: 10px;
+    /* Hero */
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 50%, rgba(153, 30, 49, 0.3), transparent 50%),
+        linear-gradient(120deg, #17171d, #101014 75%);
+      border-bottom: 1px solid var(--line);
     }
 
-    .card p {
-      color: #99969f;
-      font-size: 14px;
+    .hero::after {
+      content: "WBG";
+      position: absolute;
+      right: -20px;
+      bottom: -100px;
+      font-size: clamp(180px, 35vw, 420px);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.025);
+      line-height: 1;
+      pointer-events: none;
     }
 
-    footer {
-      padding: 30px 10%;
-      border-top: 1px solid #303038;
-      color: #77747d;
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: var(--red-light);
+      font-size: 12px;
+      letter-spacing: 5px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 10vw, 112px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      font-weight: 900;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+      color: var(--red-light);
+    }
+
+    .hero-description {
+      max-width: 520px;
+      color: #b7b2bc;
+      font-size: 15px;
+      margin-bottom: 38px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      padding: 13px 28px;
+      background: var(--red);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .hero-button:hover {
+      background: var(--red-light);
+      transform: translateY(-3px);
+    }
+
+    /* Statistics */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat {
+      padding: 30px 15px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--red-light);
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .stat span {
+      color: var(--muted);
       font-size: 12px;
     }
 
+    /* Sections */
+
+    section.content-section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 38px;
+      gap: 20px;
+    }
+
+    .section-label {
+      color: var(--red-light);
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Archive Cards */
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .archive-card {
+      min-height: 210px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      transition: 0.25s;
+    }
+
+    .archive-card:hover {
+      border-color: var(--red);
+      background: var(--surface-light);
+      transform: translateY(-4px);
+    }
+
+    .card-number {
+      color: var(--red-light);
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+    }
+
+    .archive-card h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .archive-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .card-arrow {
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      color: var(--red-light);
+      font-size: 24px;
+    }
+
+    /* About */
+
+    .about {
+      background: #17171d;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-content {
+      max-width: 750px;
+    }
+
+    .about-content h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 35px 0;
+      color: #77737d;
+      font-size: 11px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+
     @media (max-width: 700px) {
-      header {
+      .container {
+        width: 88%;
+      }
+
+      .navbar {
         flex-direction: column;
-        gap: 16px;
+        gap: 14px;
+        padding: 18px 0;
       }
 
       nav {
+        gap: 18px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
       }
 
       .hero {
-        padding: 80px 7%;
+        min-height: 480px;
       }
 
-      .section {
-        padding: 50px 7%;
+      .hero h1 {
+        letter-spacing: -2px;
       }
 
-      .cards {
+      .stats {
         grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .archive-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      section.content-section {
+        padding: 65px 0;
       }
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <div class="logo">WBG ARCHIVE</div>
-    <nav>
-      <a href="#about">關於</a>
-      <a href="#players">選手</a>
-      <a href="#history">歷史</a>
-      <a href="#matches">賽事</a>
-    </nav>
+    <div class="container navbar">
+      <a class="logo" href="#">WBG <span>ARCHIVE</span></a>
+
+      <nav>
+        <a href="#archive">資料庫</a>
+        <a href="#players">選手</a>
+        <a href="#history">隊伍歷史</a>
+        <a href="#about">關於本站</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+
     <section class="hero">
-      <div class="eyebrow">IDENTITY V LEAGUE · FAN ARCHIVE</div>
-      <h1>WEIBO<br>GAMING</h1>
-      <p>
-        記錄北京 WBG 第五人格分部的選手、賽事與歷史。
-        收藏每一段值得被記住的故事。
-      </p>
-    </section>
+      <div class="container hero-content">
+        <div class="eyebrow">IDENTITY V LEAGUE · FAN ARCHIVE</div>
 
-    <section class="section" id="about">
-      <h2 class="section-title">ARCHIVE</h2>
-      <p class="section-desc">探索北京 WBG 的資料與歷史。</p>
+        <h1>WEIBO<br><span>GAMING.</span></h1>
 
-      <div class="cards">
-        <article class="card" id="players">
-          <h3>選手檔案</h3>
-          <p>認識選手、個人經歷與職業生涯。</p>
-        </article>
+        <p class="hero-description">
+          A RECORD OF EVERY MOMENT.<br>
+          記錄北京 WBG 第五人格分部的選手、賽事與歷史。
+          收藏每一段值得被記住的故事。
+        </p>
 
-        <article class="card" id="history">
-          <h3>隊伍歷史</h3>
-          <p>回顧隊伍發展、歷代陣容與重要時刻。</p>
-        </article>
-
-        <article class="card" id="matches">
-          <h3>賽事紀錄</h3>
-          <p>整理聯賽賽季、比賽結果與成績。</p>
-        </article>
+        <a class="hero-button" href="#archive">EXPLORE ARCHIVE →</a>
       </div>
     </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat">
+          <strong>WBG</strong>
+          <span>WEIBO GAMING</span>
+        </div>
+
+        <div class="stat">
+          <strong>IVL</strong>
+          <span>IDENTITY V LEAGUE</span>
+        </div>
+
+        <div class="stat">
+          <strong>ALL</strong>
+          <span>HISTORY & RECORDS</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="content-section" id="archive">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">THE ARCHIVE</div>
+            <h2>探索資料庫</h2>
+          </div>
+          <p>EXPLORE THE HISTORY OF WBG</p>
+        </div>
+
+        <div class="archive-grid">
+
+          <a class="archive-card" href="#players" id="players">
+            <div class="card-number">01 / PLAYERS</div>
+            <h3>選手檔案</h3>
+            <p>認識選手、個人經歷與職業生涯。</p>
+            <div class="card-arrow">↗</div>
+          </a>
+
+          <a class="archive-card" href="#history" id="history">
+            <div class="card-number">02 / HISTORY</div>
+            <h3>隊伍歷史</h3>
+            <p>回顧隊伍發展、歷代陣容與重要時刻。</p>
+            <div class="card-arrow">↗</div>
+          </a>
+
+          <a class="archive-card" href="#matches">
+            <div class="card-number">03 / MATCHES</div>
+            <h3>賽事紀錄</h3>
+            <p>整理聯賽賽季、比賽結果與成績。</p>
+            <div class="card-arrow">↗</div>
+          </a>
+
+          <a class="archive-card" href="#achievements">
+            <div class="card-number">04 / ACHIEVEMENTS</div>
+            <h3>榮譽成就</h3>
+            <p>收藏隊伍在各項賽事中的重要成績。</p>
+            <div class="card-arrow">↗</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section about" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="section-label">ABOUT THIS PROJECT</div>
+          <h2>關於 WBG ARCHIVE</h2>
+          <p>
+            WBG Archive 是一個由粉絲製作的北京 WBG
+            第五人格分部資料整理計畫，致力於記錄隊伍的發展、
+            選手的職業生涯以及值得珍藏的賽事時刻。
+            <br><br>
+            本網站為非官方粉絲作品，與 Weibo Gaming
+            及 Identity V League 並無官方隸屬關係。
+          </p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    WEIBO GAMING ARCHIVE · FAN-MADE PROJECT
-    <br>
-    非官方粉絲資料庫，資料以可查證來源為準。
+    <div class="container footer-inner">
+      <span>WEIBO GAMING ARCHIVE</span>
+      <span>FAN-MADE PROJECT · NOT OFFICIAL</span>
+    </div>
   </footer>
 
 </body>
