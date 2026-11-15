@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101014">
+  <title>選手檔案 | WBG Archive</title>
+
+  <style>
+    :root {
+      --bg: #101014;
+      --surface: #19191f;
+      --surface-light: #222129;
+      --red: #b52e3d;
+      --red-light: #e05b68;
+      --text: #f4f0ed;
+      --muted: #96929b;
+      --line: #34313a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 86%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #101014;
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--red-light);
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--red-light);
+    }
+
+    .page-hero {
+      padding: 100px 0 75px;
+      background:
+        radial-gradient(ellipse at 85% 50%, rgba(153,30,49,.25), transparent 50%),
+        #17171d;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--red-light);
+      font-size: 12px;
+      letter-spacing: 5px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .page-description {
+      color: var(--muted);
+      margin-top: 22px;
+      max-width: 560px;
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-label {
+      color: var(--red-light);
+      font-size: 11px;
+      letter-spacing: 4px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 8px;
+    }
+
+    .notice {
+      padding: 22px 25px;
+      background: var(--surface);
+      border-left: 3px solid var(--red);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 35px;
+    }
+
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .player-card {
+      min-height: 225px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 26px;
+      transition: .2s;
+    }
+
+    .player-card:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+
+    .player-number {
+      color: var(--red-light);
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .player-placeholder {
+      width: 65px;
+      height: 65px;
+      margin: 22px 0;
+      display: grid;
+      place-items: center;
+      background: var(--surface-light);
+      border: 1px solid var(--line);
+      color: var(--red-light);
+      font-size: 26px;
+    }
+
+    .player-card h3 {
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .player-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .career-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 30px;
+    }
+
+    .career-box p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      color: #77737d;
+      font-size: 11px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 750px) {
+      .container {
+        width: 88%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px 0;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .player-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 75px 0 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a class="logo" href="index.html">WBG <span>ARCHIVE</span></a>
+
+      <nav>
+        <a href="index.html">首頁</a>
+        <a href="players.html">選手</a>
+        <a href="history.html">隊伍歷史</a>
+        <a href="matches.html">賽事</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">PLAYER DATABASE · WBG</div>
+        <h1>PLAYER<br>PROFILES.</h1>
+        <p class="page-description">
+          每一位選手，都是隊伍歷史的一部分。
+          記錄北京 WBG 第五人格分部選手的職業生涯與重要時刻。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-label">THE ROSTER</div>
+          <h2>選手名單</h2>
+        </div>
+
+        <div class="notice">
+          目前為資料庫初始版本，選手資料尚待整理與核實。
+          後續將依照賽季及歷史陣容逐步建立個人檔案。
+        </div>
+
+        <div class="player-grid">
+
+          <article class="player-card">
+            <div class="player-number">PLAYER 01</div>
+            <div class="player-placeholder">?</div>
+            <h3>待建立檔案</h3>
+            <p>選手資料尚待確認</p>
+          </article>
+
+          <article class="player-card">
+            <div class="player-number">PLAYER 02</div>
+            <div class="player-placeholder">?</div>
+            <h3>待建立檔案</h3>
+            <p>選手資料尚待確認</p>
+          </article>
+
+          <article class="player-card">
+            <div class="player-number">PLAYER 03</div>
+            <div class="player-placeholder">?</div>
+            <h3>待建立檔案</h3>
+            <p>選手資料尚待確認</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" style="background:#17171d;">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-label">CAREER RECORDS</div>
+          <h2>職業生涯紀錄</h2>
+        </div>
+
+        <div class="career-box">
+          <p>
+            未來將整理選手所屬賽季、隊伍經歷、位置、
+            比賽紀錄及個人成就，並盡可能附上可查證的資料來源。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>WEIBO GAMING ARCHIVE</span>
+      <span>FAN-MADE PROJECT · NOT OFFICIAL</span>
+    </div>
+  </footer>
+
+</body>
+</html>
