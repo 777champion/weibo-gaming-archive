@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weibo Gaming Archive</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #101014;
+      color: #f4f0eb;
+      font-family: "Noto Sans TC", sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 7%;
+      border-bottom: 1px solid #303038;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #aaa7b0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      min-height: 470px;
+      padding: 110px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 80% 50%, #52252c 0%, transparent 45%),
+        linear-gradient(120deg, #19191f, #101014);
+    }
+
+    .eyebrow {
+      color: #d77b83;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #aaa7b0;
+      max-width: 520px;
+      font-size: 16px;
+    }
+
+    .section {
+      padding: 70px 10%;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      color: #88858e;
+      margin-bottom: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 28px;
+      min-height: 160px;
+      background: #1b1b22;
+      border: 1px solid #303038;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      border-color: #b85b65;
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #99969f;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 30px 10%;
+      border-top: 1px solid #303038;
+      color: #77747d;
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .hero {
+        padding: 80px 7%;
+      }
+
+      .section {
+        padding: 50px 7%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">WBG ARCHIVE</div>
+    <nav>
+      <a href="#about">關於</a>
+      <a href="#players">選手</a>
+      <a href="#history">歷史</a>
+      <a href="#matches">賽事</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">IDENTITY V LEAGUE · FAN ARCHIVE</div>
+      <h1>WEIBO<br>GAMING</h1>
+      <p>
+        記錄北京 WBG 第五人格分部的選手、賽事與歷史。
+        收藏每一段值得被記住的故事。
+      </p>
+    </section>
+
+    <section class="section" id="about">
+      <h2 class="section-title">ARCHIVE</h2>
+      <p class="section-desc">探索北京 WBG 的資料與歷史。</p>
+
+      <div class="cards">
+        <article class="card" id="players">
+          <h3>選手檔案</h3>
+          <p>認識選手、個人經歷與職業生涯。</p>
+        </article>
+
+        <article class="card" id="history">
+          <h3>隊伍歷史</h3>
+          <p>回顧隊伍發展、歷代陣容與重要時刻。</p>
+        </article>
+
+        <article class="card" id="matches">
+          <h3>賽事紀錄</h3>
+          <p>整理聯賽賽季、比賽結果與成績。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    WEIBO GAMING ARCHIVE · FAN-MADE PROJECT
+    <br>
+    非官方粉絲資料庫，資料以可查證來源為準。
+  </footer>
+
+</body>
+</html>
