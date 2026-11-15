@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>榮譽成就 — WEIBO GAMING</title>
+  <meta name="description" content="WEIBO GAMING 博七時期榮譽與賽事成績紀錄">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #100d0f;
+      color: #eee8e8;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #39272d;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #a83b50;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #b9afb2;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #d65b70;
+    }
+
+    main {
+      width: 84%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: #c45a6d;
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      color: #aaa0a3;
+      max-width: 650px;
+      margin-bottom: 65px;
+    }
+
+    .section-title {
+      font-size: 25px;
+      margin-bottom: 25px;
+      padding-left: 15px;
+      border-left: 3px solid #a83b50;
+    }
+
+    .honor-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .honor-card {
+      background: #1a1417;
+      border: 1px solid #39272d;
+      padding: 28px 30px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .honor-card:hover {
+      border-color: #a83b50;
+      transform: translateY(-3px);
+    }
+
+    .honor-year {
+      color: #c45a6d;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .honor-card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .honor-card p {
+      color: #aaa0a3;
+      font-size: 14px;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 4px 10px;
+      border: 1px solid #65404a;
+      color: #d98a98;
+      font-size: 12px;
+    }
+
+    .note {
+      margin-top: 45px;
+      padding: 22px 25px;
+      background: #1a1417;
+      border-left: 3px solid #a83b50;
+      color: #aaa0a3;
+      font-size: 13px;
+    }
+
+    footer {
+      border-top: 1px solid #39272d;
+      padding: 25px 8%;
+      text-align: center;
+      color: #746a6d;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      main {
+        width: 88%;
+        padding: 60px 0;
+      }
+
+      .honor-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="index.html">WEIBO <span>GAMING</span></a>
+
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="players.html">選手</a>
+      <a href="tournaments.html">賽事</a>
+      <a href="moments.html">重要時刻</a>
+      <a href="achievements.html" class="active">榮譽</a>
+      <a href="index.html#about">關於本站</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">RECORDS & HONORS</p>
+    <h1>ACHIEVEMENTS.</h1>
+
+    <p class="intro">
+      榮譽不只是最終的名次，也是隊伍一路走來的紀錄。
+      這裡整理 WEIBO GAMING 博七時期在各項賽事中取得的成績與重要榮譽。
+    </p>
+
+    <section>
+      <h2 class="section-title">榮譽紀錄</h2>
+
+      <div class="honor-list">
+
+        <article class="honor-card">
+          <p class="honor-year">2025</p>
+          <h3>2025 IVL 夏季賽</h3>
+          <p>記錄隊伍在夏季聯賽中的最終名次與賽事成果。</p>
+          <span class="status">待補充成績</span>
+        </article>
+
+        <article class="honor-card">
+          <p class="honor-year">2025</p>
+          <h3>2025 IVL 秋季賽</h3>
+          <p>記錄隊伍在秋季聯賽中的最終名次與賽事成果。</p>
+          <span class="status">待補充成績</span>
+        </article>
+
+        <article class="honor-card">
+          <p class="honor-year">2026</p>
+          <h3>深淵的呼喚 IX</h3>
+          <p>記錄隊伍在深淵賽事及全球總決賽中的成績。</p>
+          <span class="status">待補充成績</span>
+        </article>
+
+      </div>
+
+      <div class="note">
+        本頁資料將以官方賽事公告及可查證的比賽紀錄為準，
+        後續逐步補上實際名次、獎項與相關資料來源。
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    WEIBO GAMING ARCHIVE · 博七
+  </footer>
+</body>
+</html>
