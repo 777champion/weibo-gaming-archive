@@ -224,6 +224,16 @@
       color: var(--muted);
       font-size: 13px;
     }
+    .view-all {
+      color: var(--text);
+      font-size: 13px;
+      white-space: nowrap;
+      transition: 0.2s;
+    }
+
+.view-all:hover {
+  color: var(--red-light);
+}
 
     /* Archive Cards */
 
@@ -534,7 +544,7 @@
             <div class="section-label">ACHIEVEMENTS</div>
             <h2>榮譽成就</h2>
           </div>
-          <p>RECORDS & HONORS</p>
+          <a href="achievements.html" class="view-all">查看全部榮譽 ↗</a>
         </div>
 
         <div class="about-content">
