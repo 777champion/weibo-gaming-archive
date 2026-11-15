@@ -3,17 +3,29 @@
 
 ## 1. Project Overview
 
-Weibo Gaming Archive is a fan-made archive dedicated to the Identity V division of Weibo Gaming (WBG), also known as Beijing WBG.
+Weibo Gaming Archive is an independent fan-made archive dedicated to the B7 era of the Identity V division of Weibo Gaming (WBG), also known as Beijing WBG.
 
-The website aims to organize, preserve, and present information about the team's players, history, matches, achievements, and related content.
+The archive focuses on the five starting players who define the B7 era:
+
+- Huiyi — Survivor
+- Guoker — Survivor
+- Persica — Survivor
+- Koting — Survivor
+- N1e — Hunter
+
+These five players are the core identity of B7. Substitute players, coaches, and other team members may be included in relevant records, but changes to these supporting roles do not redefine the B7 lineup.
+
+The archive covers the period from the 2025 IVL Summer season through Koting's transfer in May 2026, including the team's participation in the 2025 IVL seasons and COA IX.
 
 This is an independent fan project and is not an official website of Weibo Gaming or Identity V League (IVL).
 
 ## 2. Project Goals
 
-- Build a comprehensive archive covering all relevant aspects of Beijing WBG's Identity V division.
-- Organize historical and current information in a clear and accessible structure.
-- Provide an intuitive browsing experience.
+- Build a focused archive documenting the B7 era of Beijing WBG's Identity V division.
+- Preserve the records and stories of the five core starting players: Huiyi, Guoker, Persica, Koting, and N1e.
+- Organize tournament results, match records, roster changes, achievements, and notable events from the B7 period.
+- Present the team's development from 2025 IVL Summer through COA IX and Koting's transfer in May 2026.
+- Provide an intuitive browsing experience with clear information architecture.
 - Maintain a consistent visual identity across all pages.
 - Make the website easy to maintain and expand.
 
@@ -36,20 +48,36 @@ This is an independent fan project and is not an official website of Weibo Gamin
 
 ## 5. Website Scope
 
-The project has comprehensive coverage (All).
+The website focuses exclusively on the B7 era, from the 2025 IVL Summer season through Koting's transfer in May 2026.
 
-Potential content categories include:
+The five core starting players are:
 
-- Team introduction and history.
-- Player profiles and career information.
-- Rosters and lineup changes.
+- Huiyi
+- Guoker
+- Persica
+- Koting
+- N1e
+
+The archive should prioritize the following content:
+
+- Profiles of the five core starting players.
+- Team rosters and lineup changes during the B7 era.
+- 2025 IVL Summer and Autumn season records.
+- COA IX tournament records.
 - Match records and tournament results.
-- Season archives.
-- Achievements and milestones.
-- Notable events and historical timelines.
-- Media and related materials.
+- Team achievements and notable moments.
+- A timeline of important events during the B7 era.
+- Relevant substitute players, coaches, and supporting team members.
 
-Do not arbitrarily exclude relevant categories simply to simplify implementation.
+### Scope Boundaries
+
+- The five core players define the B7 identity, regardless of changes to substitute players or supporting staff.
+- Substitute players and other team members may be documented when relevant to the five core players or the team's activities.
+- Do not expand the archive into a comprehensive history of all WBG generations.
+- Do not include unrelated player career information outside the B7 period unless it provides necessary context.
+- Information about events after the B7 era should only be included when necessary to clarify the end of this period.
+
+Do not sacrifice information accuracy or important historical context merely to simplify implementation.
 
 ## 6. Information Accuracy
 
